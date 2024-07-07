@@ -140,7 +140,7 @@ const channelRenderer = ({ chanActive, unitf, expert, blockheight }) => ({ chan 
     , !isClosed ? li('.text-center'
       , button('.btn.btn-link.btn-sm', { dataset: { closeChannel: chan.channel_id, closeChannelPeer: chan.peer_id } }, 'Close channel')) : ''
 
-    , expert ? li(yaml({ peer: omitKey('channels', peer), ...omitKey('status', chan) })) : ''
+    , expert ? li(yaml({ chan: omitKey('status', chan) })) : ''
     ])
   ])
 }
