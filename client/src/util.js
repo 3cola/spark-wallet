@@ -23,8 +23,8 @@ export const parseUri = uri => {
 export const recvAmt = ({ amount_msat: expected, amount_received_msat: actual }) =>
   (expected && (actual-expected)/expected<0.005) ? expected : actual
 
-// Parse "listpeers" to get all channels as a list of (peer,channel) tuples
-export const getChannels = peers => [].concat(...peers.map(peer => peer.channels.map(chan => ({ peer, chan }))))
+// Parse "listpeerchannels" to get all channels as a list of (peer,channel) tuples
+export const getChannels = channels => [].concat(...channels.map(chan => ({ peer, chan })))
 
 // TODO: remove this function and refactor the code that was using it...
 // this function is not needed anymore, as a quickfix, it is now Identity
